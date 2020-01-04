@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
-import Logo from '../../logo.svg';
+import Logo from '../../death-to-kirby.png';
 
 class Navbar extends Component {
 
@@ -19,8 +20,11 @@ class Navbar extends Component {
       >
         <Menu.Item>
           <img src={Logo} alt="logo"/>
+          <h1> Death to Kirby Travel</h1>
         </Menu.Item>
         <Menu.Item
+          as= { Link }
+          to='/'
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
@@ -28,18 +32,30 @@ class Navbar extends Component {
           Home
         </Menu.Item>
         <Menu.Item
-          name='item1'
-          active={activeItem === 'item1'}
+          as= { Link }
+          to='/trips'
+          name='trips'
+          active={activeItem === 'trips'}
           onClick={this.handleItemClick}
         >
-          Item1
+          Trips
         </Menu.Item>
         <Menu.Item
-          name='item2'
-          active={activeItem === 'item2'}
+          name='destinations'
+          active={activeItem === 'destinations'}
           onClick={this.handleItemClick}
         >
-          Item2
+          Destinations
+        </Menu.Item>
+        <Menu.Item
+          as={ Link }
+          to='/plantrip'
+          name='tripForm'
+          active={activeItem === 'tripForm'}
+          position='right'
+          onClick={this.handleItemClick}
+        >
+          Plan a Trip
         </Menu.Item>
       </Menu>
     )
