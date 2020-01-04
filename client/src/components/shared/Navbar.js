@@ -11,26 +11,34 @@ class Navbar extends Component {
   render() {
    const { activeItem } = this.state
     return(
-      <Menu inverted stackable size='massive'>
+      <Menu 
+        inverted 
+        stackable 
+        size='massive'
+        borderless='true'
+      >
         <Menu.Item>
           <img src={Logo} alt="logo"/>
         </Menu.Item>
         <Menu.Item
-        name='home'
-        active={activeItem === 'home'}
-        onClick={this.handleItemClick}>
+          name='home'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick}
+        >
           Home
         </Menu.Item>
         <Menu.Item
-        name='item1'
-        active={activeItem === 'item1'}
-        onClick={this.handleItemClick}>
+          name='item1'
+          active={activeItem === 'item1'}
+          onClick={this.handleItemClick}
+        >
           Item1
         </Menu.Item>
         <Menu.Item
-        name='item2'
-        active={activeItem === 'item2'}
-        onClick={this.handleItemClick}>
+          name='item2'
+          active={activeItem === 'item2'}
+          onClick={this.handleItemClick}
+        >
           Item2
         </Menu.Item>
       </Menu>
